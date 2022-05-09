@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --paragraph-font-size: 16px;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  position: absolute;
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+  background-image: url("./images/pattern-background-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: var(--pale-blue);
+}
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*card*/
+.card {
+  width: 330px;
+  height: 550px;
+  background-color: white;
+  border-radius: 15px;
+  font-size: var(--paragraph-font-size);
+}
+.card__image {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  width: 100%;
+}
+.card__content {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 380px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
+}
+.card__title {
+  font-weight: 900;
+}
+.card__text {
+  line-height: 1.5rem;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.card__plan-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--very-pale-blue);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+}
+.card__btn {
+  padding: 15px;
+  box-shadow: 0px 10px 10px 0px rgba(45, 0, 255, 0.2);
+  font-weight: 900;
+  border-radius: 10px;
+  background-color: var(--bright-blue);
+  color: white;
+  border: none;
+}
+.btn--transparent {
+  background-color: transparent;
+  color: black;
+  box-shadow: none;
+}
+.card__title,
+.card__plan-name {
+  color: var(--dark-blue);
+}
+.card__text,
+.card__plan-price,
+.btn--transparent {
+  color: var(--desaturated-blue);
+}
+/*end-card*/
+
+/*active states*/
+.card__change-plan-btn:hover {
+  text-decoration: none;
+  color: rgb(140, 136, 255);
+}
+.btn--cancel:hover {
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+.btn--pay:hover {
+  background-color: rgb(140, 136, 255);
+  cursor: pointer;
+}
+/*end-active states*/
+
+/*Desktop*/
+@media (min-width: 1440px) {
+  body {
+    background-image: url(./images/pattern-background-desktop.svg);
+  }
+  .card {
+    width: 380px;
+    height: 580px;
+  }
+  .card__content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+/*end-desktop*/
